@@ -1,0 +1,21 @@
+{
+  "name": "dapp",
+  "version": "1.0.0",
+  "description": "Delegatable voting dapp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V00D00-child/proxy-polls.git"
+  },
+  "author": "Idris Bowman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/V00D00-child/proxy-polls/issues"
+  },
+  "homepage": "https://github.com/V00D00-child/proxy-polls/blob/main/README.md",
+  "scripts": {
+    "build":"echo \"TODO build\"",
+    "lint": "echo \"TODO lint\"",
+    "start": "echo \"TODO start\"",
+    "test": "echo \"TODO dapp test\""
+  }
+}

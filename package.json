@@ -1,7 +1,6 @@
 {
-    "name": "proxy-poll-monorepo",
+    "name": "proxy-polls-monorepo",
     "version": "1.0.0",
-    "private": true,
     "repository": {
       "type": "git",
       "url": "git+https://github.com/V00D00-child/proxy-polls.git"
@@ -13,12 +12,14 @@
     },
     "homepage": "https://github.com/V00D00-child/proxy-polls/blob/main/README.md",
     "scripts": {
-      "test": "cd packages/voting-delegatable-sol && npm run test",
-      "compile": "cd packages/voting-delegatable-sol && npm run compile",
-      "deploy:voting": "cd packages/voting-delegatable-sol && npm run deploy:voting",
-      "deploy:aa": "cd packages/voting-delegatable-sol && npm run deploy:aa",
-      "deploy:all": "cd packages/voting-delegatable-sol && npm run deploy:all",
-      "fund": "cd packages/voting-delegatable-sol && npm run fund",
+      "test": "npm run --prefix=packages/voting-delegatable-sol test && npm run --prefix=packages/dapp test",
+      "build": "npm run --prefix=packages/voting-delegatable-sol compile && npm run --prefix=packages/dapp build",
+      "deploy:voting": "npm run --prefix=packages/voting-delegatable-sol deploy:voting",
+      "deploy:aa": "npm run --prefix=packages/voting-delegatable-sol deploy:aa",
+      "deploy:all": "npm run --prefix=packages/voting-delegatable-sol deploy:all",
+      "fund": "npm run --prefix=packages/voting-delegatable-sol fund",
+      "start": "npm run --prefix=packages/dapp start",
+      "lint": "npm run --prefix=packages/voting-delegatable-sol lint && npm run --prefix=packages/dapp lint",
       "node": "docker-compose up geth",
       "bundler": "docker-compose up bundler"
     },

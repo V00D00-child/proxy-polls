@@ -2,7 +2,7 @@
   "name": "voting-delegatable-sol",
   "version": "1.0.0",
   "private": true,
-  "description": "Delegatable voting",
+  "description": "Delegatable voting contracts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/V00D00-child/proxy-polls.git"
@@ -19,7 +19,8 @@
     "deploy:voting": "npx hardhat run scripts/deploy.js --network localhost",
     "deploy:aa": "npx hardhat run scripts/deploy-aa.js --network localhost",
     "deploy:all": "npm run deploy:voting && npm run deploy:aa",
-    "fund": "npx hardhat --network localhost faucet"
+    "fund": "npx hardhat --network localhost faucet",
+    "lint": "echo \"TODO lint\""
   },
   "devDependencies": {
     "@account-abstraction/contracts": "^0.6.0",

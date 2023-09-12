@@ -1,4 +1,4 @@
-# Voting Delegatable Solidity
+# @proxy-polls/voting-delegatable-so
 
 ## Installation
 
