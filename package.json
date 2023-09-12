@@ -19,7 +19,7 @@
       "deploy:aa": "cd packages/voting-delegatable-sol && npm run deploy:aa",
       "deploy:all": "cd packages/voting-delegatable-sol && npm run deploy:all",
       "fund": "cd packages/voting-delegatable-sol && npm run fund",
-      "geth": "docker-compose up geth",
+      "node": "docker-compose up geth",
       "bundler": "docker-compose up bundler"
     },
     "engines": {
