@@ -14,17 +14,17 @@ async function main() {
     await deployer.getAddress()
   );
 
-  const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy();
-  await token.deployed();
+  const PresidentialElection = await ethers.getContractFactory("PresidentialElection");
+  const presidentialElection = await PresidentialElection.deploy();
+  await presidentialElection.deployed();
 
-  console.log("Token address:", token.address);
+  console.log("PresidentialElection address:", presidentialElection.address);
 
   // We also save the contract's artifacts and address in the frontend directory
-  saveFrontendFiles(token);
+  saveFrontendFiles(presidentialElection);
 }
 
-function saveFrontendFiles(token) {
+function saveFrontendFiles(contract) {
   const fs = require("fs");
   const contractsDir = path.join(__dirname, "..", "..", "dapp", "src", "contracts", ``);
 
@@ -34,14 +34,14 @@ function saveFrontendFiles(token) {
 
   fs.writeFileSync(
     path.join(contractsDir, "contract-address.json"),
-    JSON.stringify({ Token: token.address }, undefined, 2)
+    JSON.stringify({ PresidentialElection: contract.address }, undefined, 2)
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const PresidentialElectionArtifact = artifacts.readArtifactSync("PresidentialElection");
 
   fs.writeFileSync(
-    path.join(contractsDir, "Token.json"),
-    JSON.stringify(TokenArtifact, null, 2)
+    path.join(contractsDir, "PresidentialElection.json"),
+    JSON.stringify(PresidentialElectionArtifact, null, 2)
   );
 }
 
