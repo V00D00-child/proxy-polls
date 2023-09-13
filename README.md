@@ -6,7 +6,7 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/node-18.x-green" alt="Node Version">
-  <img src="https://img.shields.io/badge/solidity-0.8.9-blue" alt="Solidity Version">
+  <img src="https://img.shields.io/badge/solidity-0.8.17-blue" alt="Solidity Version">
   <img src="https://github.com/V00D00-child/proxy-polls/actions/workflows/build.yml/badge.svg?branch=main">
 </p>
 
