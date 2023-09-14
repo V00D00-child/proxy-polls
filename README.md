@@ -10,6 +10,12 @@
   <img src="https://github.com/V00D00-child/proxy-polls/actions/workflows/build.yml/badge.svg?branch=main">
 </p>
 
+## Insipiration
+
+The inspiration for ProxyPolls idea came from the upcoming US 2024 presidential election. I was thinking it would be cool to run a lil social experiment in crypto land where you have presidential voting onchain. Trying to answer 3 question:
+1. If we give people the option to delegate their presidential votes who will they delegate their vote to?(Elon Musk, or Kim Kardashian  :grin:)
+2. Is voting onchain more efficient than the current way US does voting? 
+3. Can we tokenize voter registration cards?
 
 ## Start local geth node 
 
@@ -27,7 +33,6 @@ npm run test
 ```sh
 npm run compile
 ```
-
 
 ## Deploying contract to a local node
 Follow the steps below to deploy the contracts to a local node.

@@ -1,5 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.15;
+
+import { Delegatable } from "./Delegatable.sol";
+import { DelegatableCore } from "./DelegatableCore.sol";
+import "./TypesAndDecoders.sol";
 
 /**
  * @title PresidentialElection
@@ -14,7 +18,8 @@ pragma solidity ^0.8.17;
  * of all active candidates. This contract is designed to promote transparent 
  * and secure voting within the Ethereum blockchain.
  */
-contract PresidentialElection {
+contract PresidentialElection is Delegatable {
+    
     struct Candidate {
         string name;
         uint voteCount;
@@ -31,7 +36,7 @@ contract PresidentialElection {
     /**
      * @notice Contract constructor. Initializes the contract with default candidates.
      */
-    constructor() {
+    constructor() Delegatable("PresidentialElection", "1") {
         owner = msg.sender;
         addCandidate("Donald Trump");
         addCandidate("Joe Biden");
@@ -128,5 +133,31 @@ contract PresidentialElection {
         }
 
         return activeCandidates;
+    }
+
+
+    /* ===================================================================================== */
+    /* Internal Functions                                                                    */
+    /* ===================================================================================== */
+       function _msgSender()
+        internal
+        view
+        virtual
+        override(DelegatableCore, Context)
+        returns (address sender)
+    {
+        if (msg.sender == address(this)) {
+            bytes memory array = msg.data;
+            uint256 index = msg.data.length;
+            assembly {
+                sender := and(
+                    mload(add(array, index)),
+                    0xffffffffffffffffffffffffffffffffffffffff
+                )
+            }
+        } else {
+            sender = msg.sender;
+        }
+        return sender;
     }
 }
