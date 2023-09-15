@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.15;
 
+import "@openzeppelin/contracts/access/Ownable.sol";
 import { Delegatable } from "./Delegatable.sol";
 import { DelegatableCore } from "./DelegatableCore.sol";
-import "./TypesAndDecoders.sol";
 
 /**
  * @title PresidentialElection
@@ -18,7 +18,7 @@ import "./TypesAndDecoders.sol";
  * of all active candidates. This contract is designed to promote transparent 
  * and secure voting within the Ethereum blockchain.
  */
-contract PresidentialElection is Delegatable {
+contract PresidentialElection is Delegatable, Ownable {
     
     struct Candidate {
         string name;
@@ -26,7 +26,6 @@ contract PresidentialElection is Delegatable {
         bool isActive; // Indicates whether the candidate is active
     }
 
-    address public owner;
     mapping(address => bool) public hasVoted;
     Candidate[] public candidates;
 
@@ -37,17 +36,8 @@ contract PresidentialElection is Delegatable {
      * @notice Contract constructor. Initializes the contract with default candidates.
      */
     constructor() Delegatable("PresidentialElection", "1") {
-        owner = msg.sender;
         addCandidate("Donald Trump");
         addCandidate("Joe Biden");
-    }
-
-    /**
-     * @notice Modifier to restrict certain functions to the contract owner.
-     */
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can perform this action.");
-        _;
     }
 
     /**

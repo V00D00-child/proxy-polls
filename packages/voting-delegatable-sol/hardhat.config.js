@@ -6,6 +6,8 @@ require("@nomicfoundation/hardhat-toolbox");
 require("./tasks/faucet");
 require('dotenv').config();
 
+const optimizerEnabled = !process.env.OPTIMIZER_DISABLED;
+
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   networks: {
@@ -17,5 +19,14 @@ module.exports = {
   gasReporter: {
     enabled: true
   },
-  solidity: "0.8.15",
+  solidity: {
+    version: '0.8.15',
+    settings: {
+      optimizer: {
+        enabled: optimizerEnabled,
+        runs: 200,
+      },
+      evmVersion: 'istanbul',
+    },
+  },
 };

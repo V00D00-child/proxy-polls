@@ -3,6 +3,11 @@ pragma solidity 0.8.15;
 
 import "../TypesAndDecoders.sol";
 
+
+/*
+    This interface serves as a specification for contracts that want to provide delegation-related functionality. 
+    Any contract that implements this interface must provide implementations for all the functions declared in the interface. 
+*/
 interface IDelegatable {
     /**
      * @notice Allows a smart contract to submit a batch of invocations for processing, allowing itself to be the delegate.

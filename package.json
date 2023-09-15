@@ -2,31 +2,34 @@
     "name": "proxy-polls-monorepo",
     "version": "1.0.0",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/V00D00-child/proxy-polls.git"
+        "type": "git",
+        "url": "git+https://github.com/V00D00-child/proxy-polls.git"
     },
     "author": "Idris Bowman",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/V00D00-child/proxy-polls/issues"
+        "url": "https://github.com/V00D00-child/proxy-polls/issues"
     },
     "homepage": "https://github.com/V00D00-child/proxy-polls/blob/main/README.md",
     "scripts": {
-      "test": "npm run --prefix=packages/voting-delegatable-sol test && npm run --prefix=packages/dapp test",
-      "build": "npm run --prefix=packages/voting-delegatable-sol compile && npm run --prefix=packages/dapp build",
-      "deploy:voting": "npm run --prefix=packages/voting-delegatable-sol deploy:voting",
-      "deploy:aa": "npm run --prefix=packages/voting-delegatable-sol deploy:aa",
-      "deploy:all": "npm run --prefix=packages/voting-delegatable-sol deploy:all",
-      "fund": "npm run --prefix=packages/voting-delegatable-sol fund",
-      "start": "npm run --prefix=packages/dapp start",
-      "lint": "npm run --prefix=packages/voting-delegatable-sol lint && npm run --prefix=packages/dapp lint",
-      "node": "docker-compose up geth",
-      "bundler": "docker-compose up bundler"
+        "test": "npm run --prefix=packages/voting-delegatable-sol test && npm run --prefix=packages/dapp test",
+        "build": "npm run --prefix=packages/voting-delegatable-sol compile && npm run --prefix=packages/dapp build",
+        "deploy:voting": "npm run --prefix=packages/voting-delegatable-sol deploy:voting",
+        "deploy:aa": "npm run --prefix=packages/voting-delegatable-sol deploy:aa",
+        "deploy:all": "npm run --prefix=packages/voting-delegatable-sol deploy:all",
+        "fund": "npm run --prefix=packages/voting-delegatable-sol fund",
+        "start": "npm run --prefix=packages/dapp start",
+        "lint": "npm run --prefix=packages/voting-delegatable-sol lint && npm run --prefix=packages/dapp lint",
+        "node": "docker-compose up geth",
+        "bundler": "docker-compose up bundler"
     },
     "engines": {
-      "node": ">=18.0.0"
+        "node": ">=18.0.0"
     },
     "workspaces": [
-      "packages/*"
-    ]
-  }
+        "packages/*"
+    ],
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.9.3"
+    }
+}

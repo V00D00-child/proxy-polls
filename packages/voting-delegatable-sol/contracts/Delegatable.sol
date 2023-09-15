@@ -2,11 +2,16 @@
 pragma solidity 0.8.15;
 
 // import "hardhat/console.sol";
-import {EIP712DOMAIN_TYPEHASH} from "./TypesAndDecoders.sol";
-import {Delegation, Invocation, Invocations, SignedInvocation, SignedDelegation} from "./CaveatEnforcer.sol";
+import {EIP712DOMAIN_TYPEHASH, Delegation, Invocation, Invocations, SignedInvocation, SignedDelegation} from "./TypesAndDecoders.sol";
+import {CaveatEnforcer} from "./CaveatEnforcer.sol";
 import {DelegatableCore} from "./DelegatableCore.sol";
 import {IDelegatable} from "./interfaces/IDelegatable.sol";
 
+
+/*
+    Delegatable contract is an implementation of the IDelegatable interface and extends the DelegatableCore abstract contract. 
+    It provides a set of functions and mechanisms for handling delegation and executing delegated transactions while adhering to EIP712 standards and replay protection.
+*/
 abstract contract Delegatable is IDelegatable, DelegatableCore {
     /// @notice The hash of the domain separator used in the EIP712 domain hash.
     bytes32 public immutable domainHash;

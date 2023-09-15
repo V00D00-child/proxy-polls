@@ -1,9 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.15;
 
-import {EIP712Decoder, EIP712DOMAIN_TYPEHASH} from "./TypesAndDecoders.sol";
-import {Delegation, Invocation, Invocations, SignedInvocation, SignedDelegation, Transaction, ReplayProtection, CaveatEnforcer} from "./CaveatEnforcer.sol";
+import {EIP712Decoder, EIP712DOMAIN_TYPEHASH, Delegation, Invocation, Invocations, SignedInvocation, SignedDelegation, Transaction, ReplayProtection} from "./TypesAndDecoders.sol";
+import {CaveatEnforcer} from "./CaveatEnforcer.sol";
 
+/*
+    Overall, DelegatableCore is designed to handle delegation and execution of transactions in a controlled and secure manner. 
+    It provides mechanisms for verifying signatures, enforcing replay protection, and executing transactions based on delegations. 
+    Please note that some functionality is abstract or not fully implemented, so this contract is intended to be 
+    inherited and extended by other contracts to provide specific delegation capabilities.
+*/
 abstract contract DelegatableCore is EIP712Decoder {
     /// @notice Account delegation nonce manager
     mapping(address => mapping(uint256 => uint256)) internal multiNonce;
