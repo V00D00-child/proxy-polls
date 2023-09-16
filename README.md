@@ -31,7 +31,7 @@ npm run test
 ## Compiling contracts
 
 ```sh
-npm run compile
+npm run build
 ```
 
 ## Deploying contract to a local node
