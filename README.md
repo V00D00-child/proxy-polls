@@ -17,6 +17,13 @@ The inspiration for ProxyPolls idea came from the upcoming US 2024 presidential 
 2. Is voting onchain more efficient than the current way US does voting? 
 3. Can we tokenize voter registration cards?
 
+
+## Development todo list
+1. [ ] Create Voter registeration contract using Soulbound tokens
+2. [ ] Update PresidentialElection contract to use Voter registeration contract before voting
+3. [ ] Update PresidentialElection contract to use real world time for voting closing with Chainlink
+4. [ ] Create a dapp to allow users to register and vote onchain
+
 ## Start local geth node 
 
 ```sh
