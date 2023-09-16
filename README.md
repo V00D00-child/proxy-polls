@@ -1,14 +1,14 @@
 # ProxyPolls 🗳️
-
-<p align="left">
-  ProxyPolls is a decentralized voting platform built on Web3 technology. It enables users to create and manage revocable Counterfactual Delegations, allowing them to delegate their votes to trusted individuals. Take control of your voting power with ProxyPolls and participate in shaping the future of politics.
-</p>
-
 <p align="left">
   <img src="https://img.shields.io/badge/node-18.x-green" alt="Node Version">
   <img src="https://img.shields.io/badge/solidity-0.8.15-blue" alt="Solidity Version">
   <img src="https://github.com/V00D00-child/proxy-polls/actions/workflows/build.yml/badge.svg?branch=main">
 </p>
+
+<p align="left">
+  ProxyPolls is a decentralized voting platform built on Web3 technology. It enables users to create and manage revocable Counterfactual Delegations, allowing them to delegate their votes to trusted individuals. Take control of your voting power with ProxyPolls and participate in shaping the future of politics.
+</p>
+
 
 ## Insipiration
 
