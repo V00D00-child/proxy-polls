@@ -72,15 +72,17 @@ contract PresidentialElection is Delegatable, Ownable {
         return false;
     }
 
+    // TODO: Add voter registration functionality
+
     /**
      * @notice Function to allow a user to vote for a candidate.
      * @param _candidateIndex uint - The index of the candidate being voted for
      */
     function vote(uint _candidateIndex) public hasNotVoted {
         require(_candidateIndex < candidates.length, "Invalid candidate index");
-        hasVoted[msg.sender] = true;
         candidates[_candidateIndex].voteCount++;
-        emit VoteCast(candidates[_candidateIndex].name, msg.sender);
+        hasVoted[_msgSender()] = true;
+        emit VoteCast(candidates[_candidateIndex].name, _msgSender());
     }
 
     /**
