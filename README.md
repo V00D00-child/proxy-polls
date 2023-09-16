@@ -6,23 +6,23 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/node-18.x-green" alt="Node Version">
-  <img src="https://img.shields.io/badge/solidity-0.8.17-blue" alt="Solidity Version">
+  <img src="https://img.shields.io/badge/solidity-0.8.15-blue" alt="Solidity Version">
   <img src="https://github.com/V00D00-child/proxy-polls/actions/workflows/build.yml/badge.svg?branch=main">
 </p>
 
 ## Insipiration
 
-The inspiration for ProxyPolls idea came from the upcoming US 2024 presidential election. I was thinking it would be cool to run a lil social experiment in crypto land where you have presidential voting onchain. Trying to answer 3 question:
-1. If we give people the option to delegate their presidential votes who will they delegate their vote to?(Elon Musk, or Kim Kardashian  :grin:)
-2. Is voting onchain more efficient than the current way US does voting? 
+The inspiration for ProxyPolls idea came from the upcoming US 2024 presidential election. It would be cool to run a social experiment in crypto land where you have presidential voting on-chain. Trying to answer 3 questions:
+1. If we allow people to delegate their presidential votes, who will they delegate their vote to?(Elon Musk, or Kim Kardashian:grin:)
+2. Is voting on-chain more efficient than the current way the US does voting? 
 3. Can we tokenize voter registration cards?
 
-
 ## Development todo list
-1. [ ] Create Voter registeration contract using Soulbound tokens
-2. [ ] Update PresidentialElection contract to use Voter registeration contract before voting
-3. [ ] Update PresidentialElection contract to use real world time for voting closing with Chainlink
-4. [ ] Create a dapp to allow users to register and vote onchain
+1. [ ] Create a Voter registration contract using Soulbound tokens
+2. [ ] Update the PresidentialElection contract to use the [Revocation Enforcer](https://delegatable.org/docs/enforcers/revocation-enforcer)
+3. [ ] Update the PresidentialElection contract to use the Voter registration contract before voting
+4. [ ] Update PresidentialElection contract to use the real-world time for voting to close with Chainlink
+5. [ ] Create a dapp to allow users to register and vote on-chain
 
 ## Start local geth node 
 
@@ -65,7 +65,7 @@ npm run depoly:all
 ## Run ERC-4337 Bundler(Transeptor)
 We can use use `.env.sample` to create .env file with your `MNEMONIC` and `BENEFICIARY`.
 
-- `MNEMONIC`: and is set to the default seend phrase of hardhat accounts. The first account of the hardhat accounts is used as the bundler signer.
+- `MNEMONIC`: and is set to the default seed phrase of hardhat accounts. The first account of the hardhat accounts is used as the bundler signer.
 - `BENEFICIARY`: is set to the second account of the hardhat accounts.
 
 Then, we can fund the bundler signer account with some ETH:
