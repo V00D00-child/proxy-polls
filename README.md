@@ -21,7 +21,7 @@ The inspiration for ProxyPolls idea came from the upcoming US 2024 presidential 
 1. [ ] Create a Voter registration contract using Soulbound tokens
 2. [ ] Update the PresidentialElection contract to use the Voter registration contract before voting
 3. [ ] Update PresidentialElection contract to use the real-world time for voting to close with Chainlink
-4. [ ] Create a dapp to allow users to register and vote on-chain
+4. [ ] Create a dapp to allow users to register and vote on-chai
 
 ## Features
 - [x] Voting basic (vote for a candidate)
