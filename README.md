@@ -19,10 +19,17 @@ The inspiration for ProxyPolls idea came from the upcoming US 2024 presidential 
 
 ## Development todo list
 1. [ ] Create a Voter registration contract using Soulbound tokens
-2. [ ] Update the PresidentialElection contract to use the [Revocation Enforcer](https://delegatable.org/docs/enforcers/revocation-enforcer)
-3. [ ] Update the PresidentialElection contract to use the Voter registration contract before voting
-4. [ ] Update PresidentialElection contract to use the real-world time for voting to close with Chainlink
-5. [ ] Create a dapp to allow users to register and vote on-chain
+2. [ ] Update the PresidentialElection contract to use the Voter registration contract before voting
+3. [ ] Update PresidentialElection contract to use the real-world time for voting to close with Chainlink
+4. [ ] Create a dapp to allow users to register and vote on-chain
+
+## Features
+- [x] Voting basic (vote for a candidate)
+- [x] Voting delegation (delegatee can vote on behalf of delegator)
+- [x] Revocable voting delegation (delegator can revoke delegation)
+- [ ] Voting basic with time limit (voting expires after a certain time)  - **In progress**
+- [ ] Voting delegation with time limit (voting delegation expires after a certain time) - **In progress**
+- [ ] Voter registration (voter must register before voting) - **In progress**
 
 ## Start local geth node 
 
